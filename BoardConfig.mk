@@ -25,8 +25,10 @@ TARGET_SOC := exynos5260
 BOARD_KERNEL_CMDLINE := 
 BOARD_KERNEL_BASE := 0x10000000
 BOARD_KERNEL_PAGESIZE := 2048
-TARGET_KERNEL_SOURCE := kernel/samsung/hl3g
-TARGET_KERNEL_CONFIG := cyanogenmod-exynos5260-hlltexx_00_defconfig
+#TARGET_KERNEL_SOURCE := kernel/samsung/hl3g
+#TARGET_KERNEL_CONFIG := cyanogenmod-exynos5260-hlltexx_00_defconfig
+TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.8
+TARGET_PREBUILT_KERNEL := device/samsung/hl3g/kernel
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 8388608
@@ -43,7 +45,11 @@ BOARD_HAS_LARGE_FILESYSTEM := true
 BOARD_HAS_NO_SELECT_BUTTON := true
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TARGET_RECOVERY_INITRC := device/samsung/hl3g/recovery/recovery.rc
-TARGET_RECOVERY_FSTAB := device/samsung/hl3g/recovery/twrp.fstab
+TARGET_RECOVERY_FSTAB := device/samsung/hl3g/recovery/recovery.fstab
+BOARD_HAS_NO_SELECT_BUTTON := true
+BOARD_HDPI_RECOVERY := true
+BOARD_HAS_NO_MISC_PARTITION := true
+BOARD_SUPPRESS_EMMC_WIPE := true
 BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/samsung/hl3g/recovery/recovery_keys.c
 BOARD_UMS_LUNFILE := "/sys/class/android_usb/android0/f_mass_storage/lun/file"
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/platform/exynos-dwc3.0/exynos-ss-udc.0/gadget/lun0/file"
@@ -125,23 +131,3 @@ TARGET_BOOTANIMATION_TEXTURE_CACHE := true
 # Charger
 BOARD_CHARGER_ENABLE_SUSPEND := true
 BOARD_CHARGING_MODE_BOOTING_LPM := /sys/class/power_supply/battery/batt_lp_charging
-
-# SELinux
-BOARD_SEPOLICY_DIRS += \
-   device/samsung/hl3g/sepolicy
-
-BOARD_SEPOLICY_UNION += \
-    file_contexts \
-    service_contexts \
-    device.te \
-    domain.te \
-    drmserver.te \
-    file.te \
-    gpsd.te \
-    init.te \
-    mediaserver.te \
-    servicemanager.te \
-    system_app.te \
-    system_server.te \
-    vold.te \
-    wpa.te
