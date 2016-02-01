@@ -42,3 +42,5 @@
 ```
 ### Credits (Sort by alphabetical order):
   - CTXz
+
+## This cm-11.0 tree is only for recovery build no further addition to make rom. 
