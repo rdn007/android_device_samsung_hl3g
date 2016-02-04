@@ -17,18 +17,13 @@ TARGET_BOOTLOADER_BOARD_NAME := hl3g
 TARGET_NO_RADIOIMAGE := true
 TARGET_NO_BOOTLOADER := true
 
-# Platform
-TARGET_BOARD_PLATFORM := exynos5
-TARGET_SOC := exynos5260
-
 # Kernel
 BOARD_KERNEL_CMDLINE := 
 BOARD_KERNEL_BASE := 0x10000000
 BOARD_KERNEL_PAGESIZE := 2048
-#TARGET_KERNEL_SOURCE := kernel/samsung/hl3g
-#TARGET_KERNEL_CONFIG := cyanogenmod-exynos5260-hlltexx_00_defconfig
+TARGET_KERNEL_SOURCE := kernel/samsung/hl3g
+TARGET_KERNEL_CONFIG := recovery_exynos5260-hl3gxx_00_defconfig
 TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.8
-TARGET_PREBUILT_KERNEL := device/samsung/hl3g/kernel
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 8388608
@@ -53,6 +48,13 @@ BOARD_UMS_LUNFILE := "/sys/class/android_usb/android0/f_mass_storage/lun/file"
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/platform/exynos-dwc3.0/exynos-ss-udc.0/gadget/lun0/file"
 BOARD_USES_MMCUTILS := true
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
+BOARD_RECOVERY_SWIPE := true
+
+# Philz
+TARGET_COMMON_NAME := Note 3 Neo
+BOOTLOADER_CMD_ARG := "download"
+BRIGHTNESS_SYS_FILE := "/sys/class/backlight/panel/brightness"
+BOARD_USE_B_SLOT_PROTOCOL := true
 
 # TWRP Specific
 #RECOVERY_GRAPHICS_USE_LINELENGTH := true
