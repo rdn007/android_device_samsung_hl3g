@@ -19,6 +19,7 @@ TARGET_PREFER_32_BIT := true
 TARGET_NO_RADIOIMAGE := true
 TARGET_NO_BOOTLOADER := true
 TARGET_BOOTLOADER_BOARD_NAME= universal5260
+TARGET_SLSI_VARIANT := cm
 
 # Kernel
 BOARD_KERNEL_BASE := 0x10000000
@@ -68,7 +69,7 @@ BOARD_RECOVERY_SWIPE := true
 # GPU
 USE_OPENGL_RENDERER := true
 BOARD_EGL_CFG := device/samsung/hl3g/egl/egl.cfg
-NUM_FRAMEBUFFER_SURFACE_BUFFERS := 5
+NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 
 # Audio
 BOARD_USES_LIBMEDIA_WITH_AUDIOPARAMETER := true
@@ -138,7 +139,8 @@ BOARD_SEPOLICY_UNION += \
    system_app.te \
    system_server.te \
    vold.te \
-   wpa.te
+   wpa.te \
+   init.te
 
 # Include path
 TARGET_SPECIFIC_HEADER_PATH := device/samsung/hl3g/include
