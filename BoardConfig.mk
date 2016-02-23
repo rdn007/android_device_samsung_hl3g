@@ -16,14 +16,11 @@ ARCH_ARM_HAVE_TLS_REGISTER := true
 TARGET_PREFER_32_BIT := true
 
 # Board
-TARGET_BOOTLOADER_BOARD_NAME := universal5260
-TARGET_BOARD_PLATFORM_GPU := mali-T624
 TARGET_NO_RADIOIMAGE := true
 TARGET_NO_BOOTLOADER := true
-TARGET_SLSI_VARIANT := cm
+TARGET_BOOTLOADER_BOARD_NAME= universal5260
 
 # Kernel
-BOARD_KERNEL_CMDLINE := 
 BOARD_KERNEL_BASE := 0x10000000
 BOARD_KERNEL_PAGESIZE := 2048
 TARGET_KERNEL_SOURCE := kernel/samsung/hl3g
@@ -44,6 +41,7 @@ BOARD_HAS_LARGE_FILESYSTEM := true
 # Recovery
 BOARD_HAS_NO_SELECT_BUTTON := true
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
+#TARGET_RECOVERY_INITRC := device/samsung/hl3g/recovery/recovery.rc
 TARGET_RECOVERY_FSTAB := device/samsung/hl3g/recovery/recovery.fstab
 BOARD_HAS_NO_MISC_PARTITION := true
 BOARD_SUPPRESS_EMMC_WIPE := true
@@ -70,10 +68,7 @@ BOARD_RECOVERY_SWIPE := true
 # GPU
 USE_OPENGL_RENDERER := true
 BOARD_EGL_CFG := device/samsung/hl3g/egl/egl.cfg
-BOARD_EGL_WORKAROUND_BUG_10194508 := true
-OVERRIDE_RS_DRIVER := libRSDriverArm.so
-BOARD_USES_VIRTUAL_DISPLAY := true
-BOARD_USES_HWC_SERVICES := true
+NUM_FRAMEBUFFER_SURFACE_BUFFERS := 5
 
 # Audio
 BOARD_USES_LIBMEDIA_WITH_AUDIOPARAMETER := true
@@ -91,15 +86,6 @@ BOARD_HARDWARE_CLASS := hardware/samsung/cmhw/ device/samsung/hl3g/cmhw/
 BOARD_RIL_CLASS := ../../../device/samsung/hl3g/ril
 #BOARD_PROVIDES_LIBRIL := true
 BOARD_MOBILEDATA_INTERFACE_NAME := "rmnet0"
-
-# Pre-L Compatibility
-COMMON_GLOBAL_CFLAGS += \
-    -DADD_LEGACY_ACQUIRE_BUFFER_SYMBOL \
-    -DENABLE_NON_PIE_SUPPORT
-
-# Legacy MMAP for pre-lollipop blobs
-# (needed by mcDriverDaemon which in turn is needed by cbd)
-BOARD_USES_LEGACY_MMAP := true
 
 # Sensors
 TARGET_NO_SENSOR_PERMISSION_CHECK := true
@@ -125,6 +111,12 @@ TARGET_SCREEN_HEIGHT := 1280
 TARGET_BOOTANIMATION_PRELOAD := true
 TARGET_BOOTANIMATION_TEXTURE_CACHE := true
 
+# HWCServices
+BOARD_USES_HWC_SERVICES= true
+
+# SAMSUNG gralloc
+TARGET_SAMSUNG_GRALLOC_EXTERNAL_USECASES := true
+
 # Charger
 BOARD_CHARGER_ENABLE_SUSPEND := true
 BOARD_CHARGING_MODE_BOOTING_LPM := /sys/class/power_supply/battery/batt_lp_charging
@@ -134,5 +126,19 @@ BOARD_SEPOLICY_DIRS += \
    device/samsung/hl3g/sepolicy
 
 BOARD_SEPOLICY_UNION += \
-   service_contexts
+   service_contexts \
+   file_contexts \
+   device.te \
+   domain.te \
+   drmserver.te \
+   file.te \
+   macloader.te \
+   rild.te \
+   servicemanager.te \
+   system_app.te \
+   system_server.te \
+   vold.te \
+   wpa.te
 
+# Include path
+TARGET_SPECIFIC_HEADER_PATH := device/samsung/hl3g/include
