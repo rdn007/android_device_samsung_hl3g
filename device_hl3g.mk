@@ -137,7 +137,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
     libion \
     hwcomposer.exynos5 \
-    gralloc.exynos5
+    gralloc.exynos5 \
+    memtrack.exynos5
 
 # MobiCore Setup
 PRODUCT_PACKAGES += \
