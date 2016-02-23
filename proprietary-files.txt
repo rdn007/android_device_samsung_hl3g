@@ -1,26 +1,115 @@
+# Audio
+lib/hw/audio_policy.universal5260.so
+lib/hw/audio.primary.universal5260.so
+lib/libymc_codecctrl.so
+lib/libymc_config.so
+lib/lib_Samsung_Resampler.so
+lib/lib_soundaliveresampler.so
+lib/libsamsungRecord.so
+lib/libsamsungRecord_ns.so
+lib/libsamsungRecord_zoom.so
+lib/lib_SoundAlive_SRC192_ver205.so
+lib/lib_SamsungRec_V04004.so
+lib/lib_DNSe_NRSS_ver226.so
+lib/lib_Samsung_AudioZoom_v102.so
+lib/libmysound.so
+lib/libaudiosa.so
+lib/soundfx/libaudiosa_sec.so
+lib/lib_SoundAlive_play_ver125e.so
+vendor/lib/liblvverx_3.20.03.so
+vendor/lib/liblvvetx_3.20.03.so
+usr/share/alsa/alsa.conf
+
 # Bin
-bin/lpm
-bin/mcDriverDaemon
-bin/at_distributor
-bin/gps.cer
 bin/gpsd
-bin/macloader
 bin/mcDriverDaemon
-bin/mfgloader
-bin/rild
-bin/smdexe
-bin/wlandutservice
 
-# Etc
-etc/gps.xml
-etc/init.sec.boot.sh
-etc/plmn_se13.bin
-etc/srm.bin
-etc/wifi/bcmdhd_apsta.bin
-etc/wifi/bcmdhd_sta.bin
-etc/wifi/nvram_net.txt
+# Bluetooth
+vendor/firmware/bcm4335_V0105.0540_wisol.hcd
+vendor/firmware/bcm4335_V0105.0540.hcd
 
-# MobiCore
+# OemCrypto
+lib/liboemcrypto.so
+
+# Camera
+lib/hw/camera.universal5260.so
+lib/libarccamera.so
+lib/libarcsoft_panorama_burstcapture.so
+lib/libarcsoft_picaction.so
+lib/libarcsoft_picaction_manual.so
+lib/libarcsoft_selfie_camera_lite.so
+lib/libarcsoft_sensorndk.so
+lib/libexynoscamera.so
+lib/libvdis.so
+
+# Widevine (DRM)
+bin/drmserver
+lib/libdrmdecrypt.so
+lib/libstagefright_hdcp.so
+lib/libhdcp2.so
+vendor/lib/libwvdrm_L1.so
+vendor/lib/libWVStreamControlAPI_L1.so
+lib/drm/libdrmwvmplugin.so
+lib/drm/libfwdlockengine.so
+vendor/lib/libwvm.so
+vendor/lib/mediadrm/libwvdrmengine.so
+
+lib/libcsc.so
+lib/libexynosgscaler.so
+lib/libexynosscaler.so
+lib/libexynosutils.so
+lib/libsomxaace.so
+lib/omx/libOMX.Exynos.AVC.Decoder.so
+lib/omx/libOMX.Exynos.AVC.Encoder.so
+lib/omx/libOMX.Exynos.MPEG4.Decoder.so
+lib/omx/libOMX.Exynos.MPEG4.Encoder.so
+lib/omx/libOMX.Exynos.VP8.Decoder.so
+lib/omx/libOMX.Exynos.VP8.Encoder.so
+lib/omx/libOMX.Exynos.WMV.Decoder.so
+lib/libExynosOMX_Resourcemanager.so
+lib/libExynosOMX_Core.so
+lib/libsomx263dsw.so
+lib/libsomx264dsw.so
+lib/libsomxaacd.so
+lib/libsomxaace.so
+lib/libsomxadpcmd.so
+lib/libsomxamrd.so
+lib/libsomxcmn.so
+lib/libsomxcore.so
+lib/libsomxflacd.so
+lib/libsomxhevcdsw.so
+lib/libsomxmp3d.so
+lib/libsomxmp4vdsw.so
+lib/libsomxmp43d.so
+lib/libsomxsr263d.so
+lib/libsomxvc1dsw.so
+lib/libsomxvencsw.so
+lib/libsomxvp8d.so
+lib/libsomxwmad.so
+lib/libsomxwmv7d.so
+lib/libsomxwmv8d.so
+
+
+# Graphics
+vendor/lib/egl/libGLES_mali.so
+lib/egl/libGLES_android.so
+lib/libsomxaace.so
+vendor/lib/libmalicore.bc
+vendor/lib/libRSDriverArm.so
+
+# GPS
+bin/gpsd
+lib/hw/gps.default.so
+lib/libwrappergps.so
+
+
+# Media
+vendor/firmware/fimc_is_fw2.bin
+vendor/firmware/mfc_fw.bin
+vendor/firmware/setfile_6b2.bin
+vendor/firmware/setfile_imx175.bin
+
+# MobiCore (not available in new stock)
 app/FFFFFFFF000000000000000000000001.drbin
 app/mcRegistry/00060308060501020000000000000000.tlbin
 app/mcRegistry/02010000080300030000000000000000.tlbin
@@ -41,64 +130,21 @@ app/mcRegistry/ffffffff000000000000000000000012.tlbin
 app/mcRegistry/ffffffff000000000000000000000013.tlbin
 app/mcRegistry/ffffffffd00000000000000000000004.tlbin
 app/mcRegistry/ffffffffd0000000000000000000000a.tlbin
-app/mcRegistry/fffffffff0000000000000000000001e.tlbin
+bin/scranton_RD
 
-# Hw
-lib/hw/audio.primary.universal5260.so
-lib/hw/camera.universal5260.so
-lib/hw/gps.default.so
-lib/hw/gralloc.exynos5.so
-lib/hw/nfc_nci.universal5260.so
+# Sensors
 lib/hw/sensors.universal5260.so
-lib/hw/hwcomposer.exynos5.so
-lib/hw/keystore.exynos5.so
-lib/hw/memtrack.exynos5.so
-lib/hw/power.exynos5.so
+lib/libsensorservice.so
 
-# Battery
-media/wireless_left.spi
-media/wireless_right.spi
-media/battery_cover.spi
-media/battery_error.spi
-media/particle_intro.spi
-media/particle_loop.spi
-media/lcd_density.txt
-media/percentage.spi
-media/battery_temperature_error.spi
-media/battery_low.spi
-media/dock_error.spi
-media/wave_loop.spi
-media/incompatible_charger.spi
-media/battery_temperature_limit.spi
+# Power
+# lib/hw/power.exynos5.so
 
-# OMX
-lib/omx/libOMX.Exynos.AVC.Decoder.so
-lib/omx/libOMX.Exynos.AVC.Encoder.so
-lib/omx/libOMX.Exynos.MPEG4.Decoder.so
-lib/omx/libOMX.Exynos.MPEG4.Encoder.so
-
-# Vendor 
-vendor/lib/libwvm.so
-vendor/lib/libwvdrm_L1.so
-vendor/lib/libWVStreamControlAPI_L1.so
-vendor/lib/mediadrm/libwvdrmengine.so
-vendor/lib/libmalicore.bc
-vendor/lib/egl/libGLES_mali.so
-vendor/lib/libRSDriverArm.so
-vendor/firmware/bcm4335_V0105.0540.hcd
-
-# Lib
-lib/libwrappergps.so
-lib/libvirtualdisplaymodule.so
-lib/libvirtualdisplay.so
-lib/libsxqk_skia.so
-lib/libstagefrighthw.so
-lib/libstagefright_hdcp.so
-lib/libsecril-client.so
+# Radio
+lib/libaudio-ril.so
+lib/libsec-ril.so
 lib/libsecnativefeature.so
-lib/libsec-ril.so	
-lib/libsamsungSoundbooster.so
-lib/libsamsungRecord_zoom.so
+
+
 lib/libsamsungRecord_ns.so
 lib/libsamsungRecord.so
 lib/libril.so
@@ -141,3 +187,19 @@ lib/libion.so
 lib/libexynosgscaler.so
 lib/libvdis.so
 lib/libymc_config.so
+lib/libvirtualdisplay.so
+lib/libvirtualdisplaymodule.so
+lib/libsamsungSoundbooster.so
+lib/libsecril-client.so
+lib/libtinyxml.so
+lib/libtinyalsa.so
+
+
+# Wi-Fi
+etc/wifi/bcmdhd_apsta.bin
+etc/wifi/bcmdhd_ibss.bin
+etc/wifi/bcmdhd_mfg.bin
+etc/wifi/bcmdhd_sta.bin
+etc/wifi/cred.conf
+etc/wifi/nvram_mfg.txt
+etc/wifi/nvram_net.txt

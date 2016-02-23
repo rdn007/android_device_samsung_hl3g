@@ -11,7 +11,7 @@ $(call inherit-product-if-exists, frameworks/native/build/phone-xhdpi-2048-dalvi
 #DEVICE_PACKAGE_OVERLAYS += device/samsung/hl3g/overlay
 
 # Device uses high-density artwork where available
-PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
+PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
 # Local Path
@@ -28,6 +28,10 @@ PRODUCT_COPY_FILES += \
 # Audio
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_policy.conf:system/etc/audio_policy.conf
+
+# Boot Animation
+TARGET_SCREEN_HEIGHT := 1280
+TARGET_SCREEN_WIDTH := 720
 
 # Media config
 PRODUCT_COPY_FILES += \
@@ -63,10 +67,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.ril_class=Exynos5260RIL
-
-# GPU
-PRODUCT_PACKAGES += \
-    libGLES_android
 
 # Set default USB interface
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
@@ -132,3 +132,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapstartsize=8m \
     dalvik.vm.heapgrowthlimit=128m \
     dalvik.vm.heapsize=512m 
+
+# HW Composer
+PRODUCT_PACKAGES += \
+    libion \
+    hwcomposer.exynos5 \
+    gralloc.exynos5
+
+# MobiCore Setup
+PRODUCT_PACKAGES += \
+    mcDriverDaemon
